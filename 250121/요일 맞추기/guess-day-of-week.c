@@ -16,7 +16,7 @@ int cal_date(int month, int day)
     return result;
 }
 int main() {
-    char days[7][3] ={"Mon", "Tue", "Wed", "Thu", "Fri","Sat", "Sun"};
+    char days[7][4] ={"Mon", "Tue", "Wed", "Thu", "Fri","Sat", "Sun"};
     struct days day1;
     struct days day2;
     scanf("%d %d %d %d", &day1.month, &day1.day, &day2.month, &day2.day);
@@ -26,12 +26,12 @@ int main() {
     if (differ < 0)
     {
         int tmp = (differ % 7) + 7;
-        printf("%s", days[tmp]);
+        printf("%s ", days[tmp]);
     }
     else
     {
         int tmp = differ %7 ;
-        printf("%s", days[tmp]);
+        printf("%s ", days[tmp]);
     }
 
     return 0;

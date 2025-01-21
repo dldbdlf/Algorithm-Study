@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 struct day
 {
     int month;
@@ -28,14 +29,14 @@ int main() {
     int idx;
     for(int i =0; i < 7; ++i)
     {
-        if(date == dates[i])
+        if(strcmp(date, dates[i]) == 0)
         {
             idx = i;
             break;
         }
     }
     int differ = day2_date - day1_date;
-    int result = differ / 7;
+    int result = (differ / 7);
     if((differ % 7) >= idx)
     {
         result += 1;

@@ -12,7 +12,7 @@ int main() {
     {
         int start, end;
         scanf("%d %d",&start, &end);
-        for(int j = start +100;j <= end+100; ++j)
+        for(int j = start +100;j < end+100; ++j)
         {
             numbers[j] += 1;
         }
@@ -27,15 +27,7 @@ int main() {
         max = numbers[i];
       }  
     }
-
-    if(numbers[idx] == numbers[idx +1])
-    {
-        printf("%d", max);
-    }
-    else
-    {
-        printf("%d", max -1);
-    }
+    printf("%d",max);
 
 
     return 0;

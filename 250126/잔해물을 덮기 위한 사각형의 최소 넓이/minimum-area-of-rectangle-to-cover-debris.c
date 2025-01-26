@@ -15,7 +15,7 @@ int main() {
     int size_x = a.x2 - a.x1;
     int size_y = a.y2 - a.y1;
     int numbers[size_x][size_y];
-    memset(numbers,0x01, sizeof(numbers));
+    memset(numbers, 0x00, sizeof(numbers));
     for(int i = b.x1; i < b.x2; ++i)
     {
         if(i< a.x1 || i >= a.x2)
@@ -32,21 +32,22 @@ int main() {
                 }
                 else
                 {
-                    numbers[i-a.x1][j- a.y1] =0;
+                    numbers[i-a.x1][j- a.y1] =1;
                 }
             }
         }
 
     }
-    int result_minx = a.x2;
-    int result_maxx = a.x1;
-    int result_miny = a.y2;
-    int result_maxy = a.y1;
+    int result_minx = size_x;
+    int result_maxx = 0;
+    int result_miny = size_y;
+    int result_maxy = 0;
+    int cnt = 0;
     for(int i = 0; i < size_x; ++i)
     {
         for(int j =0; j < size_y; ++j)
         {
-            if(numbers[i][j] == 1)
+            if(numbers[i][j] != 1)
             {
                 if(i < result_minx)
                 {
@@ -56,18 +57,23 @@ int main() {
                 {
                     result_maxx = i;
                 }
-                if( i < result_miny)
+                if( j < result_miny)
                 {
-                    result_miny =i;
+                    result_miny =j;
                 }
-                if( i > result_maxy)
+                if( j > result_maxy)
                 {
-                    result_maxy = i;
+                    result_maxy = j;
                 }
+                cnt += 1;
             }
         }
     }
-    int result = (result_maxx -result_minx) * (result_maxy - result_miny);
+    int result = (result_maxx -result_minx +1) * (result_maxy - result_miny+1);
+    if(cnt == 0)
+    {
+        result =0;
+    }
     printf("%d", result);
 
     return 0;

@@ -14,7 +14,7 @@ int main() {
         if(before == num)
         {
             cnt += 1;
-            if(i == (number -1))
+            if(i == (number -1) && max_cnt < cnt)
             {
                 max_cnt = cnt;
             }

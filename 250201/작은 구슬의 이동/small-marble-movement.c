@@ -14,7 +14,7 @@ int main() {
     }
     else if(direction == 'D')
     {
-        index = 2;
+        index = 0;
     }
     else if(direction == 'R')
     {

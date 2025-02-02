@@ -14,12 +14,12 @@ int main() {
         int first = cows[i];
         for(int j = i+1; j < number -1; ++j)
         {
-            if(cows[j] > first)
+            if(cows[j] >= first)
             {
                 int second = cows[j];
                 for(int z = j+1; z< number; ++z)
                 {
-                    if(cows[z] > second)
+                    if(cows[z] >= second)
                     {
                         result += 1;
                     }

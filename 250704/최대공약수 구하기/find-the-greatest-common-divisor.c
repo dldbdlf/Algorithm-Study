@@ -15,7 +15,7 @@ int main() {
         min = m;
     }
 
-    for(int i = min; i >=2; --i)
+    for(int i = min; i >= 1; --i)
     {
         if(n % i ==0 && m % i ==0)
         {
